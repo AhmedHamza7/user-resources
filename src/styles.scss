@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+    margin:0;
+    padding: 0;
+    background-color: #dfe1e3;
+}
+
+.page-container {
+    width: 90%;
+    margin-inline: auto;
+    margin-block: 4rem;
+}
+
+.card-section {
+    background: white;
+    border-radius: 0.6rem;
+    padding: 1.4rem 1.7rem;
+}

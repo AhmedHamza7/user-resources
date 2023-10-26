@@ -1,0 +1,20 @@
+.basic-info-content {
+    display: grid;
+    gap: 20px;
+}
+
+.personal-info {
+    grid-row: 1 / span 2;
+    grid-column:1 / span 2;
+}
+
+.reserve-info {
+    grid-row: 3;
+    grid-column:1 / span 2;
+}
+
+.resource-info {
+    grid-row: 1 / span 3;
+    grid-column:3 / span 2;
+}
+
