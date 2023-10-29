@@ -13,6 +13,8 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     ReactiveFormsModule,
     FormlyModule.forRoot(),
     FormlyMaterialModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule
+    // MatToolbarModule,
+    // MatIconModule,
+    // MatButtonModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]

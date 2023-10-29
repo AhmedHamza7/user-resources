@@ -1,20 +1,110 @@
+::ng-deep {
+    ngx-dropzone-image-preview{
+        img {
+            opacity: 1 !important;
+            &:hover {
+                opacity: 1 !important;
+            }
+        }
+    }
+}
+
 .basic-info-content {
     display: grid;
     gap: 20px;
+    .personal-side {
+        grid-row: 1 / span 3;
+        grid-column:1 / span 2;
+        display: grid;
+        .personal-info {
+            grid-row: 1 / span 2;
+        }
+        .resource-type {
+            grid-row: 3;
+        }
+    }
+    .resource-side {
+        grid-row: 1 / span 3;
+        grid-column:3 ;
+        .availability {
+            .available-input {
+                position: relative;
+                select {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 20%;
+                    background-color: #ECF1F6;
+                    padding: .2rem .75rem !important;
+                }
+            }
+        }
+        .supplier-time {
+            .select-supplier-time {
+                .counter-group {
+                    background: #f6f2f2;
+                    padding: 0.5rem 0.7rem;
+                    border: 1px solid #D9D9D9;
+                    border-radius: 9px;
+                    input {
+                        border:none;
+                        background: transparent;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .multi-reserve {
+            input {
+                background: #f6f2f2;
+            }
+        }
+    }
 }
 
-.personal-info {
-    grid-row: 1 / span 2;
-    grid-column:1 / span 2;
+.personal-image {
+    .image-preview{
+        position: relative;
+        ngx-dropzone-image-preview{
+            overflow: hidden !important;
+            height:120px !important;
+            border-radius: 40px !important;
+            min-width: 100px !important;
+            max-width: 100px !important;
+            img {
+                &:hover {
+                    opacity: 1 !important;
+                }
+            }
+        }
+        .img-avatar {
+            overflow: hidden !important;
+            height:120px !important;
+            border-radius: 40px !important;
+            min-width: 100px !important;
+            max-width: 100px !important;
+            img{
+                width: 100%;
+            }
+        }
+        .image-upload {
+            position: absolute;
+            left: 0;
+            top: 0;
+            ngx-dropzone{
+                height: 30px;
+                width: 30px;
+                border: none;
+                overflow: hidden;
+                border-radius: 50%;
+                background: #0771de !important;
+                color: white;
+                ngx-dropzone-label {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }
-
-.reserve-info {
-    grid-row: 3;
-    grid-column:1 / span 2;
-}
-
-.resource-info {
-    grid-row: 1 / span 3;
-    grid-column:3 / span 2;
-}
-

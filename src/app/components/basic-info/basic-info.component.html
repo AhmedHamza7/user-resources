@@ -1,17 +1,133 @@
 <div class="basic-info-content mt-3">
-    <div class="personal-info card-section">
-        <div class="">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quam ipsa deleniti ipsam non quisquam laborum facere perspiciatis natus, amet facilis quasi quaerat vel. Corrupti dolores quasi vitae doloribus repellat non voluptas, maiores mollitia, odio facilis blanditiis facere ab. Atque, repellat? Placeat rerum optio eaque adipisci sint modi eligendi voluptas?</p>
-        </div>
-    </div>
-    <div class="reserve-info card-section">
-        <div class="">
-            <p>Lorem, ipsum dolor sit amete perspiciatis natus, amet facilis on voluptas, maiores mollitia, odio facilis blanditiis facere ab. Atque, repellat? Placeat rerum optio eaque adipisci sint modi eligendi voluptas?</p>
-        </div>
-    </div>
-    <div class="resource-info card-section">
-        <div class="">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quam ipsa deleniti ipsam non quisquam laborum facere perspiciatis natus, amet facilis quasi quaerat vel. Corrupti dolores quasi vitae doloribus repellat non voluptas, maiores mollitia, odio facilis blanditiis facere ab. Atque, repellat? Placeat rerum optio eaque adipisci sint modi eligendi voluptas?</p>
-        </div>
-    </div>
-</div>
+    <!-- <div class="row">
+        <div class="col-lg-6"> -->
+            <div class="personal-side ">
+                <div class="personal-info card-section">
+                    <div class="personal-info-content">
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-md-2">
+                                <div class="personal-image">
+                                    <div class="image-preview">
+                                        <ng-container *ngIf="files.length">
+                                            <ngx-dropzone-image-preview 
+                                            ngProjectAs="ngx-dropzone-preview" 
+                                            *ngFor="let f of files" [file]="f"
+                                            >
+                                                <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+                                            </ngx-dropzone-image-preview>
+                                        </ng-container>
+                                        <div class="img-avatar" *ngIf="!files.length">
+                                            <img src="../../../assets/imgs/icons/avatar.png" alt="">
+                                        </div>
+                                        <div class="image-upload">
+                                            <ngx-dropzone 
+                                                (change)="onSelect($event)" 
+                                                [multiple]="false"
+                                                accept="image/jpeg,image/jpg,image/png,image/gif"
+                                                >
+                                                <ngx-dropzone-label>
+                                                    <img src="../../../assets/imgs/icons/gallery.png" alt="">
+                                                </ngx-dropzone-label>
+                                                <!-- <ngx-dropzone-preview *ngFor="let f of files" [removable]="false" (removed)="onRemove(f)"> -->
+                                                    <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+                                                <!-- </ngx-dropzone-preview> -->
+                                            </ngx-dropzone>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="personal-name">
+                                    <label for="name" class="form-label">Supplier Name</label>  
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-type card-section d-flex mt-4">
+                    <div class="select-label w-25 me-5">
+                        <span>Select resourse type</span>
+                    </div>
+                    <div class="select-label w-75">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label text-muted" for="inlineRadio1">
+                                reserve for one day
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label text-muted" for="inlineRadio1">
+                                reserve for more day
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="col-lg-6"> -->
+            <div class="resource-side card-section">
+                <div class="supplier-info">
+                    <div class="availability mb-2">  
+                        <label for="available" class="form-label text-muted">Resourse available to</label>  
+                        <div class="available-input">
+                            <input type="number" class="form-control" id="available">
+                            <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                                <option value="day">Day</option>
+                                <option value="month">Month</option>
+                                <option value="year">Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="supplier-time mb-2">
+                        <label for="available" class="form-label text-muted">Supplier time</label>  
+                        <div class="select-supplier-time">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="service-time" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="service-time">service time</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="fixed-time" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="fixed-time">fixed time</label>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="counter-group d-flex">
+                                        <button class='btn btn-primary'id="decrement">-</button>
+                                        <input class='form-control' type="text" id="input" readonly [value]="minutesCount + ' minutes'">
+                                        <button class='btn btn-primary'id="increment">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="multi-reserve">
+                        <label for="available" class="form-label text-muted">Multi reserve</label>  
+                        <div class="multi-reserve">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="service-time" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="service-time">service time</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="fixed-time" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="fixed-time">fixed time</label>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="counter-group d-flex">
+                                        <input class='form-control' type="text" id="input" [value]="multiReserveCount + ' appointment'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    <!-- </div>
+</div> -->
