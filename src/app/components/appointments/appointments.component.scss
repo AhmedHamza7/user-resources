@@ -1,0 +1,27 @@
+.day-group {
+    display: flex;
+    .times {
+        width: 100%;
+        .times-content{
+            display: flex;
+            align-items: center;
+            width: 70%;
+            margin-bottom: 1rem;
+            span {
+                text-wrap:nowrap;
+            }
+            .icon {
+                display: flex;
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    background: #F1F3F4;
+                }
+            }
+        }
+    }
+}

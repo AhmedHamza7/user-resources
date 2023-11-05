@@ -72,7 +72,7 @@
                     <div class="availability mb-2">  
                         <label for="available" class="form-label text-muted">Resourse available to</label>  
                         <div class="available-input">
-                            <input type="number" class="form-control" id="available">
+                            <input type="number" class="form-control">
                             <select class="form-select form-select-lg mb-3" aria-label="Large select example">
                                 <option value="day">Day</option>
                                 <option value="month">Month</option>
@@ -86,15 +86,15 @@
                             <div class="row align-items-center">
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="service-time" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="fixed-time" id="service-time" (click)="unSelectFixed()">
                                         <label class="form-check-label" for="service-time">service time</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="fixed-time" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input"  type="radio" name="fixed-time" id="fixed-time" (click)="selectFixed()">
                                         <label class="form-check-label" for="fixed-time">fixed time</label>
                                       </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4" *ngIf="showFixedCounter">
                                     <div class="counter-group d-flex">
                                         <button class='btn btn-primary'id="decrement">-</button>
                                         <input class='form-control' type="text" id="input" readonly [value]="minutesCount + ' minutes'">
@@ -105,22 +105,23 @@
                         </div>
                     </div>
                     <div class="multi-reserve">
-                        <label for="available" class="form-label text-muted">Multi reserve</label>  
+                        <label for="reserve" class="form-label text-muted">Multi reserve</label>  
                         <div class="multi-reserve">
                             <div class="row align-items-center">
                                 <div class="col-8">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="service-time" id="inlineRadio1" value="option1">
-                                        <label class="form-check-label" for="service-time">service time</label>
+                                        <input class="form-check-input" type="radio" name="one-person" id="one-person">
+                                        <label class="form-check-label" for="one-person">reserve only one</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="fixed-time" id="inlineRadio2" value="option2">
-                                        <label class="form-check-label" for="fixed-time">fixed time</label>
+                                        <input class="form-check-input"  type="radio" name="one-person" id="more-one-person">
+                                        <label class="form-check-label" for="more-one-person">Select more than one person</label>
                                       </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="counter-group d-flex">
-                                        <input class='form-control' type="text" id="input" [value]="multiReserveCount + ' appointment'">
+                                    <div class="counter-group d-flex align-items-center justifyc-content-around">
+                                        <input class='form-control w-100' type="number" id="input" [value]="multiReserveCount">
+                                        <span>appointment</span>
                                     </div>
                                 </div>
                             </div>

@@ -10,10 +10,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BasicInfoComponent } from './components/basic-info/basic-info.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { StoreModule } from '@ngrx/store';
+import { showFixedTimeCounter } from './store/store';
 
 
 @NgModule({
@@ -30,10 +29,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     ReactiveFormsModule,
     FormlyModule.forRoot(),
     FormlyMaterialModule,
-    // MatToolbarModule,
-    // MatIconModule,
-    // MatButtonModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    StoreModule.forRoot({showFixed: showFixedTimeCounter})
   ],
   providers: [],
   bootstrap: [AppComponent]
